@@ -11,6 +11,8 @@ const SORT_OPTIONS = [
   { value: "price_low", label: "Price: Low to High" },
 ];
 
+
+
 export default function ProductGrid({ products }) {
   const [filtersVisible, setFiltersVisible] = useState(true);
   const [sortOpen, setSortOpen] = useState(false);

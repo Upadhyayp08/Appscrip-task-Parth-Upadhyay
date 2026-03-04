@@ -25,48 +25,23 @@
 //   return res.json();
 // }
 
-// export async function getProducts() {
-//   try {
-//     const res = await fetch("https://fakestoreapi.com/products", {
-//       cache: "no-store",
-//     });
-
-//     if (!res.ok) {
-//       throw new Error("API error");
-//     }
-
-//     const data = await res.json();
-//     console.log(data);
-//     return data;
-//   } catch (error) {
-//     console.error("Failed to fetch products:", error);
-//     return [];
-//   }
-// }
-
-import axios from "axios";
-
 export async function getProducts() {
   try {
-    // 1. Swap the URL to DummyJSON
-    const response = await axios.get("https://dummyjson.com/products");
+    const res = await fetch("https://dummyjson.com/products", {
+      cache: "no-store",
+    });
 
-    // 2. Extract the 'products' array from the response data
-    const productsArray = response.data.products;
-
-    console.log("Fetched products:", productsArray);
-    return productsArray;
-  } catch (error) {
-    if (error.response) {
-      console.error(
-        `API Error: Status ${error.response.status}`,
-        error.response.data
-      );
-    } else if (error.request) {
-      console.error("Network Error: No response received");
-    } else {
-      console.error("Failed to fetch products:", error.message);
+    if (!res.ok) {
+      throw new Error("API error");
     }
-    return []; // Still return an empty array on failure so your UI doesn't crash
+
+    const data = await res.json();
+    console.log(data.products); // Good idea to log just the array to verify
+
+    // THE FIX: Return the array, not the parent object
+    return data.products;
+  } catch (error) {
+    console.error("Failed to fetch products:", error);
+    return [];
   }
 }

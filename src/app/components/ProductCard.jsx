@@ -22,7 +22,7 @@ export default function ProductCard({ product, index = 0 }) {
     >
       <div className="product-card-image-wrapper">
         <Image
-          src={product.image}
+          src={product.images[0]}
           alt={`${product.title} - ${product.category} product image`}
           fill
           sizes="(max-width: 480px) 50vw, (max-width: 900px) 33vw, (max-width: 1200px) 25vw, 20vw"
