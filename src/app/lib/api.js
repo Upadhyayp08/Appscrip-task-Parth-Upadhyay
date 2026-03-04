@@ -48,27 +48,25 @@ import axios from "axios";
 
 export async function getProducts() {
   try {
-    // Axios automatically throws an error if the status is not 2xx,
-    // and it automatically parses the JSON data.
-    // const response = await axios.get("https://fakestoreapi.com/products");
+    // 1. Swap the URL to DummyJSON
     const response = await axios.get("https://dummyjson.com/products");
 
-    console.log(response.data);
-    return response.data;
+    // 2. Extract the 'products' array from the response data
+    const productsArray = response.data.products;
+
+    console.log("Fetched products:", productsArray);
+    return productsArray;
   } catch (error) {
-    // Axios gives you detailed error objects
     if (error.response) {
-      // The server responded with a status outside the 2xx range (e.g., 404, 500)
       console.error(
         `API Error: Status ${error.response.status}`,
         error.response.data
       );
     } else if (error.request) {
-      // The request was made but no response was received (e.g., timeout)
-      console.error("Network Error: No response received from Fakestore API");
+      console.error("Network Error: No response received");
     } else {
       console.error("Failed to fetch products:", error.message);
     }
-    return [];
+    return []; // Still return an empty array on failure so your UI doesn't crash
   }
 }
