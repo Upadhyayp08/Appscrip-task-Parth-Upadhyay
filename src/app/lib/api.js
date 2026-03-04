@@ -32,14 +32,14 @@ export async function getProducts() {
     });
 
     if (!res.ok) {
-      console.error("API error:", res.status);
-      return [];
+      throw new Error("API error");
     }
 
     const data = await res.json();
+    console.log(data);
     return data;
   } catch (error) {
-    console.error("Fetch failed:", error);
+    console.error("Failed to fetch products:", error);
     return [];
   }
 }

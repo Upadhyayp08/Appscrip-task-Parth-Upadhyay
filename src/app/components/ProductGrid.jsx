@@ -35,6 +35,9 @@ export default function ProductGrid({ products }) {
 
   const sortLabel = SORT_OPTIONS.find((o) => o.value === sortValue)?.label;
 
+  if (!products || products.length === 0) {
+    return <p>Unable to load products. Please try again later.</p>;
+  }
   return (
     <>
       {/* Toolbar */}
