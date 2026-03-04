@@ -50,7 +50,8 @@ export async function getProducts() {
   try {
     // Axios automatically throws an error if the status is not 2xx,
     // and it automatically parses the JSON data.
-    const response = await axios.get("https://fakestoreapi.com/products");
+    // const response = await axios.get("https://fakestoreapi.com/products");
+    const response = await axios.get("https://dummyjson.com/products");
 
     console.log(response.data);
     return response.data;
