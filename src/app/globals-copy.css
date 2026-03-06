@@ -55,6 +55,7 @@ ul {
 
 /* Announcement bar */
 .announcement-bar {
+  /* background: var(--color-gray-light); */
   background: black;
   padding: 8px 24px;
   display: flex;
@@ -83,6 +84,7 @@ ul {
 
 /* Header */
 .header {
+  /* border-bottom: 1px solid var(--color-border); */
   background: var(--color-white);
   position: sticky;
   top: 0;
@@ -205,7 +207,7 @@ ul {
 .hero-section {
   text-align: center;
   padding: 60px 96px 40px;
-  max-width: 940px;
+  max-width: 1440px;
   margin: 0 auto;
 }
 
@@ -233,7 +235,7 @@ ul {
   border-top: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
   padding: 0 96px;
-  max-width: 1060px;
+  max-width: 1250px;
   margin: 0 auto;
   margin-bottom: 30px;
 }
@@ -642,35 +644,28 @@ ul {
   width: 50%;
 }
 
-/* ============================================
-   FOOTER — Fixed to match Figma design
-   ============================================ */
-
+/* Footer */
 .footer {
   background: var(--color-black);
-  /* color: var(--color-white); */
-  color: white;
+  color: var(--color-white);
   padding: 60px 96px 40px;
 }
 
-/* TOP SECTION: ~60/40 split (newsletter left, contact right) */
 .footer-top {
   display: grid;
-  grid-template-columns: 3fr 2fr;
+  grid-template-columns: 1fr 1fr;
   gap: 80px;
   padding-bottom: 48px;
-  /* border-bottom: 1px solid rgba(255, 255, 255, 0.15); */
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .footer-newsletter h3 {
-  font-family: var(--font-body);
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 0.15em;
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   margin-bottom: 8px;
-  color: var(--color-white);
 }
 
 .footer-newsletter p {
@@ -681,27 +676,24 @@ ul {
   line-height: 1.6;
 }
 
-/* Newsletter form: joined input+button with shared border */
 .newsletter-form {
   display: flex;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  gap: 0;
 }
 
 .newsletter-input {
   flex: 1;
   padding: 12px 16px;
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.3);
   background: transparent;
   color: var(--color-white);
   font-family: var(--font-body);
   font-size: 12px;
   outline: none;
-  min-width: 0;
 }
 
 .newsletter-input::placeholder {
-  /* color: rgba(255, 255, 255, 0.4); */
-  color: white;
+  color: rgba(255, 255, 255, 0.4);
 }
 
 .newsletter-btn {
@@ -713,76 +705,52 @@ ul {
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  border: none;
-  flex-shrink: 0;
   transition: background 0.2s, color 0.2s;
-  cursor: pointer;
+  border: 1px solid var(--color-white);
 }
 
 .newsletter-btn:hover {
-  background: var(--color-gray-light);
+  background: var(--color-black);
+  color: var(--color-white);
 }
 
-/* Contact section */
 .footer-contact h3 {
-  margin-left: 65px;
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   margin-bottom: 16px;
-  /* color: var(--color-white); */
-  color: white;
 }
 
 .footer-contact p {
-  margin-left: 65px;
   font-size: 12px;
   font-weight: 300;
-  /* color: rgba(255, 255, 255, 0.7); */
-  color: white;
+  color: rgba(255, 255, 255, 0.7);
   line-height: 2;
 }
 
 .footer-contact-label {
-  margin-left: 65px;
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   margin-top: 16px;
-  margin-bottom: 6px;
-  /* color: rgba(255, 255, 255, 0.5); */
-  color: white;
+  margin-bottom: 4px;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .currency-select {
-  margin-left: 65px;
-  font-size: 13px;
-  font-weight: 600;
-  /* color: rgba(255, 255, 255, 0.9); */
-  color: white;
-  letter-spacing: 0.05em;
-  margin-bottom: 4px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
 }
 
-.footer-currency-note {
-  font-size: 11px;
-  /* color: rgba(255, 255, 255, 0.4); */
-  color: white;
-  margin-top: 8px;
-  line-height: 1.6;
-  max-width: 360px;
-}
-
-/* BOTTOM SECTION: 3 columns to match Figma */
 .footer-bottom {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 40px;
   padding-top: 48px;
-  padding-bottom: 8px;
-  /* border-bottom: 1px solid rgba(255, 255, 255, 0.15); */
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .footer-col h4 {
@@ -809,11 +777,10 @@ ul {
   color: var(--color-white);
 }
 
-/* Social icons: circular to match Figma */
 .social-links {
   display: flex;
-  gap: 12px;
-  margin-top: 16px;
+  gap: 16px;
+  margin-top: 20px;
 }
 
 .social-link {
@@ -822,57 +789,46 @@ ul {
   justify-content: center;
   width: 32px;
   height: 32px;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  border-radius: 50%;
-  transition: border-color 0.2s, background 0.2s;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: border-color 0.2s;
   color: var(--color-white);
 }
 
 .social-link:hover {
   border-color: var(--color-white);
-  background: rgba(255, 255, 255, 0.08);
 }
 
-/* Payment icons */
 .payment-methods {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-top: 12px;
+  margin-top: 16px;
 }
 
 .payment-icon {
-  width: 48px;
-  height: 30px;
-  /* background: rgba(255, 255, 255, 0.1); */
-  background: white;
-  color: black;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 4px;
+  width: 40px;
+  height: 24px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 8px;
   font-weight: 700;
-  letter-spacing: 0.04em;
-  /* color: rgba(255, 255, 255, 0.8); */
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.6);
 }
 
-/* Copyright bar */
 .footer-copyright {
-  padding-top: 4px;
+  padding-top: 24px;
   text-align: center;
   font-size: 11px;
   font-weight: 300;
-  /* color: rgba(255, 255, 255, 0.4); */
-  color: white;
+  color: rgba(255, 255, 255, 0.4);
   letter-spacing: 0.05em;
 }
 
-/* ============================================
-   RESPONSIVE
-   ============================================ */
-
+/* Responsive */
 @media (max-width: 1200px) {
   .header-inner,
   .nav-inner,
@@ -953,11 +909,7 @@ ul {
 
   .footer-bottom {
     grid-template-columns: repeat(2, 1fr);
-    gap: 32px;
-  }
-
-  .footer-currency-note {
-    max-width: 100%;
+    gap: 24px;
   }
 }
 
@@ -981,14 +933,10 @@ ul {
 
   .footer-bottom {
     grid-template-columns: 1fr 1fr;
-    gap: 24px;
   }
 }
 
-/* ============================================
-   ANIMATIONS
-   ============================================ */
-
+/* Animations */
 @keyframes fadeInUp {
   from {
     opacity: 0;
